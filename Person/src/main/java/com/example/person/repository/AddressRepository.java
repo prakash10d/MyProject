@@ -10,8 +10,7 @@ import com.example.person.model.Address;
 @Repository
 public interface AddressRepository extends JpaRepository<Address, Integer>{
 
-	 Optional<Address> findByLocation(String location) ;
+	  Optional<Address> findByLocation(String location) ;
 
-	Address getByName(String name);	
 
 }

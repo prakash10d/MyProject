@@ -10,11 +10,12 @@ import com.example.person.model.Employee;
 @Repository
 public interface EmployeeRepository extends JpaRepository<Employee, Integer>{
 
-
-
 	Optional<Employee> findByDesignation(String designation);
+	
+	Optional<Employee> findByExperience(String experience);
 
-	Optional<Employee> findByName(String name);
+	boolean existsByExperience(String experience);
+
 
 
 

@@ -7,6 +7,8 @@ import javax.persistence.Id;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 @Entity
 @Table(name ="person")
 public class Person {
@@ -15,11 +17,10 @@ public class Person {
 	int id;
 	String name;
 	String email;
-	Long mobileNumber;
-	
+	String mobileNumber;
+	@JsonIgnore
    @OneToOne(mappedBy = "person")
   private Employee employee;
-//	
 	public Employee getEmployee() {
 		return employee;
 	}
@@ -44,11 +45,12 @@ public class Person {
 	public void setEmail(String email) {
 		this.email = email;
 	}
-	public Long getMobileNumber() {
+	public String getMobileNumber() {
 		return mobileNumber;
 	}
-	public void setMobileNumber(Long mobileNumber) {
+	public void setMobileNumber(String mobileNumber) {
 		this.mobileNumber = mobileNumber;
 	}
+	
 
 }

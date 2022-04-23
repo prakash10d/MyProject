@@ -1,29 +1,21 @@
 package com.example.person.model;
 
 import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
+
 @Entity
 @Table(name="Address")
 public class Address {
 	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
-	int id;
 	String location;
 	String landmark;
-	Long pincode;
+	String pincode;
 	
     
     
 	
-	public int getId() {
-		return id;
-	}
-	public void setId(int id) {
-		this.id = id;
-	}
+	
 	public String getLocation() {
 		return location;
 	}
@@ -36,12 +28,14 @@ public class Address {
 	public void setLandmark(String landmark) {
 		this.landmark = landmark;
 	}
-	public Long getPincode() {
+	public String getPincode() {
 		return pincode;
 	}
-	public void setPincode(Long pincode) {
+	public void setPincode(String pincode) {
 		this.pincode = pincode;
 	}
+	
+	
 	
 
 

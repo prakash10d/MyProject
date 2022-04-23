@@ -10,8 +10,24 @@ import com.example.person.model.Person;
 @Repository
 public interface PersonRepository extends JpaRepository<Person, Integer>{
 
+	boolean existsByMobileNumber(String mobileNumber);
 
-	 Optional<Person> findByEmail(String email);
+
+
+
+	Optional<Person> findByMobileNumber(String mobileNumber);
+//
+//	Optional<Person> findByEmail(String email);
+//
+//	boolean existsByMobileNumber(String string);
+//
+
+
+
+
+
+
+
 
 
 }

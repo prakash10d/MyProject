@@ -12,43 +12,56 @@ import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 @Entity
 @Table(name= "employee")
 public class Employee {
-	
+
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
-	int id ;
+	int id;
+	String experience;
 	String designation;
 	Long salary;
 	@OneToOne
 	@JoinColumn(name="Person_ID")
 	Person person;
-	
+
+
+
+	@JsonIgnore
 	@OneToMany(cascade = CascadeType.ALL)  
 	@JoinColumn(name="employee_id")  
 	private List<Address> address;
-	
+
 	public List<Address> getAddress() {
 		return address;
 	}
 	public void setAddress(List<Address> address) {
 		this.address = address;
 	}
-	
-	
-	public Person getPerson() {
-		return person;
-	}
-	public void setPerson(Person person) {
-		this.person = person;
-	}
+
+
 	public int getId() {
 		return id;
 	}
 	public void setId(int id) {
 		this.id = id;
 	}
+	public String getExperience() {
+		return experience;
+	}
+	public void setExperience(String experience) {
+		this.experience = experience;
+	}
+	public Person getPerson() {
+		return person;
+	}
+	public void setPerson(Person person) {
+		this.person = person;
+	}
+
 	public String getDesignation() {
 		return designation;
 	}
@@ -61,5 +74,5 @@ public class Employee {
 	public void setSalary(Long salary) {
 		this.salary = salary;
 	}
-	
+
 }
